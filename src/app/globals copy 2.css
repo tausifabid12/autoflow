@@ -1,0 +1,238 @@
+@import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
+
+@theme {
+  /* Color Palette */
+  --color-light-bg-primary: #fafafa;
+  --color-light-bg-secondary: #ffffff;
+  --color-light-bg-tertiary: #f5f5f5;
+  
+  --color-light-text-primary: #0a0a0a;
+  --color-light-text-secondary: #525252;
+  --color-light-text-tertiary: #a3a3a3;
+  
+  --color-light-border: #e5e5e5;
+  
+  --color-light-accent-primary: #3b82f6;
+  --color-light-accent-hover: #2563eb;
+  --color-light-accent-light: #dbeafe;
+  
+  --color-dark-bg-primary: #0a0a0a;
+  --color-dark-bg-secondary: #171717;
+  --color-dark-bg-tertiary: #262626;
+  
+  --color-dark-text-primary: #fafafa;
+  --color-dark-text-secondary: #a3a3a3;
+  --color-dark-text-tertiary: #525252;
+  
+  --color-dark-border: #262626;
+  
+  --color-dark-accent-primary: #60a5fa;
+  --color-dark-accent-hover: #3b82f6;
+  --color-dark-accent-light: #1e3a8a;
+  
+  --color-accent-50: #eef2ff;
+  --color-accent-100: #dbeafe;
+  --color-accent-200: #bfdbfe;
+  --color-accent-300: #93c5fd;
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
+  --color-accent-700: #1d4ed8;
+  --color-accent-800: #1e40af;
+  --color-accent-900: #1e3a8a;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* Font Families */
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-display: 'Cal Sans', 'Inter', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --font-size-display-lg: 4.5rem;
+  --font-size-display-lg--line-height: 1.1;
+  --font-size-display-lg--letter-spacing: -0.02em;
+  --font-size-display-lg--font-weight: 700;
+  
+  --font-size-display-md: 3.5rem;
+  --font-size-display-md--line-height: 1.15;
+  --font-size-display-md--letter-spacing: -0.02em;
+  --font-size-display-md--font-weight: 700;
+  
+  --font-size-display-sm: 2.5rem;
+  --font-size-display-sm--line-height: 1.2;
+  --font-size-display-sm--letter-spacing: -0.01em;
+  --font-size-display-sm--font-weight: 700;
+  
+  --font-size-heading-xl: 2rem;
+  --font-size-heading-xl--line-height: 1.25;
+  --font-size-heading-xl--letter-spacing: -0.01em;
+  --font-size-heading-xl--font-weight: 600;
+  
+  --font-size-heading-lg: 1.5rem;
+  --font-size-heading-lg--line-height: 1.3;
+  --font-size-heading-lg--letter-spacing: -0.01em;
+  --font-size-heading-lg--font-weight: 600;
+  
+  --font-size-heading-md: 1.25rem;
+  --font-size-heading-md--line-height: 1.4;
+  --font-size-heading-md--letter-spacing: 0;
+  --font-size-heading-md--font-weight: 600;
+  
+  --font-size-heading-sm: 1.125rem;
+  --font-size-heading-sm--line-height: 1.4;
+  --font-size-heading-sm--letter-spacing: 0;
+  --font-size-heading-sm--font-weight: 600;
+  
+  --font-size-body-lg: 1.125rem;
+  --font-size-body-lg--line-height: 1.5;
+  --font-size-body-lg--letter-spacing: 0;
+  --font-size-body-lg--font-weight: 400;
+  
+  --font-size-body-md: 1rem;
+  --font-size-body-md--line-height: 1.5;
+  --font-size-body-md--letter-spacing: 0;
+  --font-size-body-md--font-weight: 400;
+  
+  --font-size-body-sm: 0.875rem;
+  --font-size-body-sm--line-height: 1.5;
+  --font-size-body-sm--letter-spacing: 0;
+  --font-size-body-sm--font-weight: 400;
+  
+  --font-size-label-lg: 0.875rem;
+  --font-size-label-lg--line-height: 1.4;
+  --font-size-label-lg--letter-spacing: 0.01em;
+  --font-size-label-lg--font-weight: 500;
+  
+  --font-size-label-md: 0.8125rem;
+  --font-size-label-md--line-height: 1.4;
+  --font-size-label-md--letter-spacing: 0.01em;
+  --font-size-label-md--font-weight: 500;
+  
+  --font-size-label-sm: 0.75rem;
+  --font-size-label-sm--line-height: 1.4;
+  --font-size-label-sm--letter-spacing: 0.02em;
+  --font-size-label-sm--font-weight: 500;
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+
+  /* Box Shadows */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  --shadow-card-hover: 0 10px 30px -5px rgb(0 0 0 / 0.12), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --shadow-modal: 0 20px 40px -10px rgb(0 0 0 / 0.15), 0 8px 16px -8px rgb(0 0 0 / 0.1);
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.3s ease-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+  --animate-slide-down: slideDown 0.3s ease-out;
+  --animate-scale-in: scaleIn 0.2s ease-out;
+  --animate-shimmer: shimmer 2s infinite;
+
+  /* Keyframes */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slideDown {
+    0% { transform: translateY(-10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-light-bg-primary);
+    color: var(--color-light-text-primary);
+    transition: background-color 200ms, color 200ms;
+  }
+
+  .dark body {
+    background-color: var(--color-dark-bg-primary);
+    color: var(--color-dark-text-primary);
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  .focus-ring {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  .focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-light-bg-primary), 0 0 0 4px var(--color-accent-500);
+  }
+
+  .dark .focus-ring:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-dark-bg-primary), 0 0 0 4px var(--color-accent-500);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
