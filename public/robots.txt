@@ -2,7 +2,8 @@
 User-agent: *
 Allow: /
 
-
+# Host
+Host: https://getcreator.online/
 
 # Sitemaps
 Sitemap: https://getcreator.online/sitemap.xml

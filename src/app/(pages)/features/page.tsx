@@ -104,6 +104,7 @@ const Features = () => {
   useEffect(() => {
     // Hero animation
     gsap.fromTo(
+      //@ts-ignore
       heroRef.current?.querySelectorAll(".hero-animate"),
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "power4.out" }

@@ -1,4 +1,4 @@
-// signin
+'use client'
 
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
@@ -65,21 +65,19 @@ const Auth = () => {
         <div className="flex mb-8 bg-muted/50 rounded-full p-1 backdrop-blur-sm border border-white/5">
           <button
             onClick={() => !isLogin && handleToggle()}
-            className={`flex-1 py-3 px-6 rounded-full font-display font-semibold text-sm transition-all duration-300 ${
-              isLogin
-                ? "bg-primary text-primary-foreground shadow-lg"
-                : "text-foreground/60 hover:text-foreground"
-            }`}
+            className={`flex-1 py-3 px-6 rounded-full font-display font-semibold text-sm transition-all duration-300 ${isLogin
+              ? "bg-primary text-primary-foreground shadow-lg"
+              : "text-foreground/60 hover:text-foreground"
+              }`}
           >
             Sign In
           </button>
           <button
             onClick={() => isLogin && handleToggle()}
-            className={`flex-1 py-3 px-6 rounded-full font-display font-semibold text-sm transition-all duration-300 ${
-              !isLogin
-                ? "bg-primary text-primary-foreground shadow-lg"
-                : "text-foreground/60 hover:text-foreground"
-            }`}
+            className={`flex-1 py-3 px-6 rounded-full font-display font-semibold text-sm transition-all duration-300 ${!isLogin
+              ? "bg-primary text-primary-foreground shadow-lg"
+              : "text-foreground/60 hover:text-foreground"
+              }`}
           >
             Sign Up
           </button>

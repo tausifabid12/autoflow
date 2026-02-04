@@ -116,6 +116,7 @@ const Brands = () => {
   useEffect(() => {
     // Hero animation
     gsap.fromTo(
+      //@ts-ignore
       heroRef.current?.querySelectorAll(".hero-animate"),
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "power4.out" }
@@ -222,73 +223,73 @@ const Brands = () => {
             </div>
 
             {/* Hero Visual */}
-           <div className="hero-animate relative perspective-1000">
-  {/* The "Device" - Minimalist Tablet Frame */}
-  <div className="relative mx-auto w-full max-w-[500px] aspect-[16/10] bg-zinc-900 rounded-[2.5rem] p-3 shadow-[0_0_50px_-12px_rgba(251,191,36,0.3)] border border-zinc-800">
-    
-    {/* Screen Content */}
-    <div className="w-full h-full bg-zinc-950 rounded-[2rem] overflow-hidden relative border border-white/5">
-      
-      {/* Top Navigation Bar */}
-      <div className="h-12 border-b border-white/5 flex items-center justify-between px-8 bg-zinc-900/50 backdrop-blur-md">
-        <div className="flex gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-zinc-700" />
-          <div className="w-2 h-2 rounded-full bg-zinc-700" />
-        </div>
-        <div className="h-4 w-20 bg-zinc-800 rounded-full" />
-        <div className="w-6 h-6 rounded-full border border-yellow-500/50 flex items-center justify-center">
-            <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
-        </div>
-      </div>
+            <div className="hero-animate relative perspective-1000">
+              {/* The "Device" - Minimalist Tablet Frame */}
+              <div className="relative mx-auto w-full max-w-[500px] aspect-[16/10] bg-zinc-900 rounded-[2.5rem] p-3 shadow-[0_0_50px_-12px_rgba(251,191,36,0.3)] border border-zinc-800">
 
-      {/* Hero Metric Section */}
-      <div className="p-8">
-        <div className="flex justify-between items-end mb-8">
-          <div>
-            <span className="text-yellow-500 text-xs font-bold uppercase tracking-widest">Performance</span>
-            <h4 className="text-3xl font-display font-bold text-white mt-1">Growth Engine</h4>
-          </div>
-          <div className="text-right">
-             <span className="block text-2xl font-mono text-yellow-400 font-bold">84.2%</span>
-             <span className="text-[10px] text-zinc-500 uppercase tracking-tighter">Efficiency Score</span>
-          </div>
-        </div>
+                {/* Screen Content */}
+                <div className="w-full h-full bg-zinc-950 rounded-[2rem] overflow-hidden relative border border-white/5">
 
-        {/* Abstract "Yellow" Data Visualization */}
-        <div className="flex items-end gap-2 h-32">
-          {[40, 70, 45, 90, 65, 80, 35, 60, 95, 50].map((height, i) => (
-            <div 
-              key={i} 
-              className="flex-1 bg-gradient-to-t from-yellow-500/20 to-yellow-400 rounded-t-sm transition-all hover:brightness-125"
-              style={{ height: `${height}%` }}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
+                  {/* Top Navigation Bar */}
+                  <div className="h-12 border-b border-white/5 flex items-center justify-between px-8 bg-zinc-900/50 backdrop-blur-md">
+                    <div className="flex gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-zinc-700" />
+                      <div className="w-2 h-2 rounded-full bg-zinc-700" />
+                    </div>
+                    <div className="h-4 w-20 bg-zinc-800 rounded-full" />
+                    <div className="w-6 h-6 rounded-full border border-yellow-500/50 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+                    </div>
+                  </div>
 
-  {/* Overlapping Floating Card - Adds Depth */}
-  <div className="absolute -bottom-10 -left-10 w-48 p-4 bg-zinc-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl rotate-[-4deg] hidden md:block">
-    <div className="flex items-center gap-3 mb-3">
-      <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center">
-        <Users className="w-4 h-4 text-black" />
-      </div>
-      <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Audience</div>
-    </div>
-    <div className="space-y-2">
-      <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
-        <div className="h-full bg-yellow-500 w-[70%]" />
-      </div>
-      <div className="h-1.5 w-[60%] bg-zinc-800 rounded-full overflow-hidden">
-        <div className="h-full bg-yellow-500 w-[40%]" />
-      </div>
-    </div>
-  </div>
+                  {/* Hero Metric Section */}
+                  <div className="p-8">
+                    <div className="flex justify-between items-end mb-8">
+                      <div>
+                        <span className="text-yellow-500 text-xs font-bold uppercase tracking-widest">Performance</span>
+                        <h4 className="text-3xl font-display font-bold text-white mt-1">Growth Engine</h4>
+                      </div>
+                      <div className="text-right">
+                        <span className="block text-2xl font-mono text-yellow-400 font-bold">84.2%</span>
+                        <span className="text-[10px] text-zinc-500 uppercase tracking-tighter">Efficiency Score</span>
+                      </div>
+                    </div>
 
-  {/* Soft Background Glow */}
-  <div className="absolute -inset-4 bg-yellow-500/10 blur-3xl -z-10 rounded-full" />
-</div>
+                    {/* Abstract "Yellow" Data Visualization */}
+                    <div className="flex items-end gap-2 h-32">
+                      {[40, 70, 45, 90, 65, 80, 35, 60, 95, 50].map((height, i) => (
+                        <div
+                          key={i}
+                          className="flex-1 bg-gradient-to-t from-yellow-500/20 to-yellow-400 rounded-t-sm transition-all hover:brightness-125"
+                          style={{ height: `${height}%` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Overlapping Floating Card - Adds Depth */}
+              <div className="absolute -bottom-10 -left-10 w-48 p-4 bg-zinc-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl rotate-[-4deg] hidden md:block">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center">
+                    <Users className="w-4 h-4 text-black" />
+                  </div>
+                  <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Audience</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="h-full bg-yellow-500 w-[70%]" />
+                  </div>
+                  <div className="h-1.5 w-[60%] bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="h-full bg-yellow-500 w-[40%]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Soft Background Glow */}
+              <div className="absolute -inset-4 bg-yellow-500/10 blur-3xl -z-10 rounded-full" />
+            </div>
           </div>
         </div>
       </section>
