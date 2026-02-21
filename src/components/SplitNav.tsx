@@ -3,14 +3,14 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const MENU_ITEMS = [
   { name: 'Sign-in', link: '/signin' },
-  { name: 'Jobs', link: '/jobs' },
-  { name: 'Features', link: '/features' },
   { name: 'Creators', link: '/creators' },
   { name: 'Brands', link: '/brands' },
+  { name: 'Features', link: '/features' },
+  { name: 'Jobs', link: '/jobs' },
 ];
 
 const transitionEase = [0.76, 0, 0.24, 1];
@@ -73,7 +73,7 @@ const Logo = () => {
 // ---------------------------------------------------------------------------
 // SplitNav
 // ---------------------------------------------------------------------------
-const SplitNav = ({children}: {children: React.ReactNode}) => {
+const SplitNav = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
@@ -82,41 +82,51 @@ const SplitNav = ({children}: {children: React.ReactNode}) => {
     setTimeout(() => router.push(path), CLOSE_DURATION);
   };
 
+  const pathName = usePathname()
+  const hideNavbar =
+    pathName?.startsWith('/influencer') ||
+    pathName === '/brand';
+
 
   return (
     <div className="relative min-h-screen  mx-auto   overflow-hidden">
 
 
 
-      <div className="absolute top-8 left-1/2 -translate-x-1/2
+      {
+        !hideNavbar &&
+        <div className="absolute top-8 left-1/2 -translate-x-1/2
                 w-full max-w-7xl
                 flex items-center justify-between
                 px-6 md:px-0
                 bg-transparent z-[10000]">
 
-        {/* Logo – top-left, always visible */}
-        <div className="">
-          {
-            !isOpen && <Logo />
-          }
+          {/* Logo – top-left, always visible */}
+          <div className="">
+            {
+              !isOpen && <Logo />
+            }
 
+
+          </div>
+
+          {/* Hamburger Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className=" z-[100] relative group flex flex-col gap-2 items-end p-4 transition-transform active:scale-90"
+          >
+            <div className={`h-[2px] bg-white transition-all duration-500 ease-out ${isOpen ? 'w-8 rotate-45 translate-y-[10px]' : 'w-10'}`} />
+            <div className={`h-[2px] bg-white transition-all duration-500 ease-out ${isOpen ? 'opacity-0' : 'w-6'}`} />
+            <div className={`h-[2px] bg-white transition-all duration-500 ease-out ${isOpen ? 'w-8 -rotate-45 -translate-y-[10px]' : 'w-8'}`} />
+          </button>
 
         </div>
-
-        {/* Hamburger Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className=" z-[100] relative group flex flex-col gap-2 items-end p-4 transition-transform active:scale-90"
-        >
-          <div className={`h-[2px] bg-white transition-all duration-500 ease-out ${isOpen ? 'w-8 rotate-45 translate-y-[10px]' : 'w-10'}`} />
-          <div className={`h-[2px] bg-white transition-all duration-500 ease-out ${isOpen ? 'opacity-0' : 'w-6'}`} />
-          <div className={`h-[2px] bg-white transition-all duration-500 ease-out ${isOpen ? 'w-8 -rotate-45 -translate-y-[10px]' : 'w-8'}`} />
-        </button>
-
-      </div>
+      }
 
 
-  {children}
+
+
+      {children}
 
 
 
@@ -172,9 +182,11 @@ const SplitNav = ({children}: {children: React.ReactNode}) => {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 className="text-black/80 font-mono text-xs uppercase tracking-widest flex flex-col gap-4"
               >
-                <div className="font-bold underline decoration-1 underline-offset-4">2024 Edition</div>
+                <div className="font-bold underline decoration-1 underline-offset-4">
+                  Tausif Abid
+                </div>
                 <div className="max-w-xs leading-relaxed font-medium">
-                  Experimental split-panel navigation. Focus on motion, typography, and grain.
+                  Full-stack developer building creator platforms for brands.
                 </div>
               </motion.div>
             </motion.div>

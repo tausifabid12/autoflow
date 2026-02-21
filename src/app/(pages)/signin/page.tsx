@@ -305,13 +305,6 @@ const handleLogin = async (
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000" />
 
-      {/* Navigation */}
-      <Link
-        href="/"
-        className="absolute top-6 left-6 font-display font-bold text-xl md:text-2xl tracking-tight hover:text-primary transition-colors"
-      >
-        CREATRIX
-      </Link>
 
       <div
         ref={containerRef}
